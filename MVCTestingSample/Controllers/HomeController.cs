@@ -13,6 +13,13 @@ namespace MVCTestingSample.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
+        // Create a mock, to call in tests
+        public HomeController()
+        {
+            // Cannot be null, this forces the test to fail
+            // return null;
+        }
+
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
