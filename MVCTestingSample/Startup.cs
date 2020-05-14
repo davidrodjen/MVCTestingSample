@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Security;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -11,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using MVCTestingSample.Models;
+using MVCTestingSample.Models.Interfaces;
 
 namespace MVCTestingSample
 {
@@ -30,6 +32,9 @@ namespace MVCTestingSample
                      Options => Options.UseSqlServer(Configuration.GetConnectionString("ProductTestingDb")));
 
             services.AddControllersWithViews();
+
+            // Injects with the appropriate connection string
+            services.AddScoped<IProductRespository, EFProductRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
