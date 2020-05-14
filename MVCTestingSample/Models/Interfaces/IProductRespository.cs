@@ -14,7 +14,11 @@ namespace MVCTestingSample.Models.Interfaces
         /// <returns></returns>
         Task<Product> GetProductByIdAsync(int id);
 
-        Task<IEnumerable<Product>> GetAllProductsAsync();
+        /// <summary>
+        /// Changed the interface to list
+        /// </summary>
+        /// <returns></returns>
+        Task<List<Product>> GetAllProductsAsync();
 
         Task AddProductAsync(Product p);
 
