@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace MVCTestingSample.Models.Interfaces
 {
-    interface IProductRespository
+    public interface IProductRespository
     {
         /// <summary>
         /// CRUD Functionality Interface Test
