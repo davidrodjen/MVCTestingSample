@@ -11,7 +11,7 @@ namespace MVCTestingSample.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        //private readonly ILogger<HomeController> _logger;
 
         // Create a mock, to call in tests
         public HomeController()
@@ -20,10 +20,11 @@ namespace MVCTestingSample.Controllers
             // return null;
         }
 
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
+        //Commenting this out so that it doesn't break the home view
+        //public HomeController(ILogger<HomeController> logger)
+        //{
+        //    _logger = logger;
+        //}
 
         public IActionResult Index()
         {
