@@ -22,6 +22,7 @@ namespace MVCTestingSample.Controllers.Tests
 
             // Make sure it returns a view of some kind
             Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(ViewResult), "Index should return a ViewResult");
         }
     }
 
